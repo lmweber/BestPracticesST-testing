@@ -43,16 +43,14 @@ jobs:
       ## Comments
       ## Comments
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       ## Comments
       - name: Set up Quarto
-        if: runner.os == 'Linux'
         uses: quarto-dev/quarto-actions/setup@v2
 
       ## Comments
       - name: Install Quarto
-        if: runner.os == 'Linux'
         run: |
           quarto --version
 
