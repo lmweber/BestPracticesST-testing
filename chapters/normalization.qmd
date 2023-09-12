@@ -1,0 +1,66 @@
+# Normalization
+
+## Background
+
+Here we apply normalization methods developed for scRNA-seq data, treating each spot as equivalent to one cell.
+
+
+## Previous steps
+
+*Code to run steps from the previous chapters to generate the `SpatialExperiment` object required for this chapter.*
+
+```{r, message=FALSE, results='hide'}
+# LOAD DATA
+
+library(SpatialExperiment)
+library(STexampleData)
+spe <- Visium_humanDLPFC()
+
+# QUALITY CONTROL (QC)
+
+library(scater)
+# subset to keep only spots over tissue
+spe <- spe[, colData(spe)$in_tissue == 1]
+# identify mitochondrial genes
+is_mito <- grepl("(^MT-)|(^mt-)", rowData(spe)$gene_name)
+# calculate per-spot QC metrics
+spe <- addPerCellQC(spe, subsets = list(mito = is_mito))
+# select QC thresholds
+qc_lib_size <- colData(spe)$sum < 600
+qc_detected <- colData(spe)$detected < 400
+qc_mito <- colData(spe)$subsets_mito_percent > 28
+qc_cell_count <- colData(spe)$cell_count > 10
+# combined set of discarded spots
+discard <- qc_lib_size | qc_detected | qc_mito | qc_cell_count
+colData(spe)$discard <- discard
+# filter low-quality spots
+spe <- spe[, !colData(spe)$discard]
+```
+
+
+## Logcounts
+
+Calculate log-transformed normalized counts (abbreviated as "logcounts") using library size factors.
+
+We apply the methods implemented in the `scater` [@McCarthy2017] and `scran` [@Lun2016] packages, which were originally developed for scRNA-seq data, making the assumption here that these methods can be applied to SRT data by treating spots as equivalent to cells.
+
+We use the library size factors methodology since this is the simplest approach, and can easily be applied to SRT data. Alternative approaches that are populare for scRNA-seq data, including normalization by deconvolution, are more difficulty to justify in the context of spot-based SRT data since (i) spots may contain multiple cells from more than one cell type, and (ii) datasets can contain multiple samples (e.g. multiple Visium slides, resulting in sample-specific clustering).
+
+```{r, message=FALSE, fig.height=3.5}
+library(scran)
+
+# calculate library size factors
+spe <- computeLibraryFactors(spe)
+
+summary(sizeFactors(spe))
+hist(sizeFactors(spe), breaks = 20)
+
+# calculate logcounts and store in object
+spe <- logNormCounts(spe)
+
+# check
+assayNames(spe)
+dim(counts(spe))
+dim(logcounts(spe))
+```
+
