@@ -1,0 +1,59 @@
+Package: BestPracticesST
+Title: Best Practices for Spatial Transcriptomics Analysis with Bioconductor
+Description: This package contains source materials to build the Best Practices 
+    for Spatial Transcriptomics Analysis with Bioconductor online book.
+Version: 0.99.0
+Authors@R: 
+    c(person(given = "Lukas M.",
+             family = "Weber",
+             role = c("aut", "cre"),
+             email = "lukas.weber.edu@gmail.com",
+             comment = c(ORCID = "0000-0002-3282-1730")),
+      person(given = "Leonardo",
+             family = "Collado-Torres",
+             role = c("aut"),
+             email = "lcolladotor@gmail.com",
+             comment = c(ORCID = "0000-0003-2140-308X")),
+      person(given = "Stephanie C.",
+             family = "Hicks",
+             role = c("aut"),
+             email = "shicks19@jhu.edu",
+             comment = c(ORCID = "0000-0002-7858-0231")))
+License: CC BY-NC-ND 3.0 US
+URL: https://github.com/lmweber/BestPracticesST
+BugReports: https://github.com/lmweber/BestPracticesST/issues
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    SpatialExperiment
+Imports: 
+    BiocFileCache,
+    BiocStyle,
+    bookdown,
+    DelayedMatrixStats,
+    devtools,
+    ExperimentHub,
+    ggspavis,
+    igraph,
+    knitr,
+    lobstr,
+    pheatmap,
+    rmarkdown,
+    rtracklayer,
+    scater,
+    scran,
+    sessioninfo,
+    SingleCellExperiment,
+    spatialLIBD,
+    STexampleData,
+    uwot, 
+    nnSVG
+Suggests:
+    RefManageR
+VignetteBuilder: knitr
+biocViews: 
+    Book,
+    Transcriptomics,
+    Spatial
