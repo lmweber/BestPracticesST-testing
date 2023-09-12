@@ -49,8 +49,8 @@ jobs:
       - name: Install Quarto
         if: runner.os == 'Linux'
         uses: quarto-dev/quarto-actions/setup@v2
-        - run: |
-            quarto --version
+        run: |
+          quarto --version
 
       - name: Query dependencies
         run: |
