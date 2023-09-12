@@ -49,11 +49,6 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      ## Comments
-      - name: Install Quarto
-        run: |
-          quarto --version
-
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -135,7 +130,8 @@ jobs:
           path: source-folder # By default, the current working dir is used i.e `quarto render .`
 
       - name: Publish to GitHub Pages (and render)
-        if: github.ref == 'refs/heads/main' && env.run_pkgdown == 'true' && runner.os == 'Linux'
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
