@@ -135,5 +135,5 @@ jobs:
       - name: Publish to GitHub Pages (and render)
         if: github.ref == 'refs/heads/main' && env.run_pkgdown == 'true' && runner.os == 'Linux'
         uses: quarto-dev/quarto-actions/publish@v2
-          with:
-            target: gh-pages
+        with:
+          target: gh-pages
