@@ -38,7 +38,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 0.3.71  ## need to specify version when using container
+          version: release  ## need to specify version when using container
 
 
       # add software dependencies here
