@@ -11,10 +11,10 @@ book:
   cover-image: Bioconductor-rh.png
   chapters:
     - index.qmd
-    - part: introduction.qmd
+    - part: chapters/introduction.qmd
       chapters:
-        - spatially_resolved_transcriptomics.qmd
-        - bioconductor-data-classes.qmd
+        - chapters/spatially_resolved_transcriptomics.qmd
+        - chapters/bioconductor-data-classes.qmd
 #    - part: chapters/analysis_steps.qmd
 #      chapters:
 #        - chapters/quality_control.qmd
