@@ -102,8 +102,6 @@ jobs:
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
-        permissions:
-          contents: write
         with:
           target: gh-pages
         env:
