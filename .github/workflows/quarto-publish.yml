@@ -99,7 +99,7 @@ jobs:
           sessioninfo::session_info(pkgs, include_base = TRUE)
         shell: Rscript {0}
 
-      - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
+#      - name: Publish to GitHub Pages (and render)
+#        uses: quarto-dev/quarto-actions/publish@v2
+#        with:
+#          target: gh-pages
