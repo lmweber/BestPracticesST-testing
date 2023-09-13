@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ${{ matrix.config.os }}
+    runs-on: ubuntu-latest
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
     container: ${{ matrix.config.cont }}
 
@@ -30,7 +30,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Quarto
-        runs-on: ubuntu-latest
         uses: quarto-dev/quarto-actions/setup@v2
 
       # add software dependencies here
