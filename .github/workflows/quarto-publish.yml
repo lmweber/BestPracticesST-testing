@@ -8,7 +8,7 @@ jobs:
   build-deploy:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-#    container: ${{ matrix.config.cont }}  ## doesn't work for 'Set up Quarto' step
+    container: ${{ matrix.config.cont }}  ## doesn't work for 'Set up Quarto' step
 
     strategy:
       fail-fast: false
@@ -27,7 +27,6 @@ jobs:
     steps:
 
       - name: Set R library home (Linux)
-        if: runner.os == 'Linux'
         run: |
           mkdir /__w/_temp/Library
           echo ".libPaths('/__w/_temp/Library')" > ~/.Rprofile
