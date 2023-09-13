@@ -8,7 +8,7 @@ jobs:
   build-deploy:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-#    container: ${{ matrix.config.cont }}  ## container does not work properly with 'Publish to GitHub Pages (and render)' step
+    container: ${{ matrix.config.cont }}  ## using container does not work properly with 'Publish to GitHub Pages (and render)' step
 
     strategy:
       fail-fast: false
@@ -40,7 +40,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: true
-          version: ${{ matrix.config.quarto }}  ## need to specify version when using containers
+          version: ${{ matrix.config.quarto }}  ## need to specify version when using container
 
       - name: Query dependencies
         run: |
