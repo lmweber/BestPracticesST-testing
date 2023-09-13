@@ -1,4 +1,4 @@
-name: Render and Publish
+name: render-and-publish
 
 on:
   push:
@@ -103,3 +103,5 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
