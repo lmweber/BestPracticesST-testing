@@ -8,7 +8,7 @@ jobs:
   build-deploy:
     runs-on: ${{ matrix.config.os }}
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-    container: ${{ matrix.config.cont }}  ## doesn't work for 'Set up Quarto' step
+    container: ${{ matrix.config.cont }}
 
     strategy:
       fail-fast: false
@@ -37,6 +37,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 0.3.71  ## need to specify version when using container
 
 
       # add software dependencies here
