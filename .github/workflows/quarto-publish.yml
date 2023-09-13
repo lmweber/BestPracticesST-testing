@@ -6,9 +6,9 @@ on:
 
 jobs:
   build-deploy:
-#    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-    container: ${{ matrix.config.cont }}
+    runs-on: ${{ matrix.config.os }}
+#    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+#    container: ${{ matrix.config.cont }}
 
     strategy:
       fail-fast: false
