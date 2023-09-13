@@ -42,6 +42,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
+          tinytex: true
           version: ${{ matrix.config.quarto }}  ## need to specify version when using containers
 
 #      - name: Query dependencies
