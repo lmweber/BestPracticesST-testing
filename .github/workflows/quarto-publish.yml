@@ -25,6 +25,9 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       cache-version: 'cache-v1'
 
+    permissions:
+      contents: write
+
     steps:
 
       - name: Set R library home (Linux)
