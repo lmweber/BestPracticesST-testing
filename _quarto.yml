@@ -15,24 +15,24 @@ book:
       chapters:
         - chapters/spatially_resolved_transcriptomics.qmd
         - chapters/bioconductor-data-classes.qmd
-#    - part: chapters/analysis_steps.qmd
-#      chapters:
-#        - chapters/quality_control.qmd
-#        - chapters/normalization.qmd
-#        - chapters/feature_selection.qmd
-#        - chapters/dimensionality_reduction.qmd
-#        - chapters/clustering.qmd
-#        - chapters/marker_genes.qmd
-#        - chapters/deconvolution.qmd
-#    - part: chapters/workflows.qmd
-#      chapters:
-#        - chapters/workflow_Visium_humanDLPFC.qmd
-#        - chapters/workflow_Visium_mouseCoronal.qmd
-#        - chapters/workflow_Visium_spatialLIBD.qmd
-#  appendices:
-#    - chapters/related_resources.qmd
-#    - chapters/contributors_acknowledgments.qmd
-#    - chapters/references.qmd
+##    - part: chapters/analysis_steps.qmd
+##      chapters:
+##        - chapters/quality_control.qmd
+##        - chapters/normalization.qmd
+##        - chapters/feature_selection.qmd
+##        - chapters/dimensionality_reduction.qmd
+##        - chapters/clustering.qmd
+##        - chapters/marker_genes.qmd
+##        - chapters/deconvolution.qmd
+##    - part: chapters/workflows.qmd
+##      chapters:
+##        - chapters/workflow_Visium_humanDLPFC.qmd
+##        - chapters/workflow_Visium_mouseCoronal.qmd
+##        - chapters/workflow_Visium_spatialLIBD.qmd
+##  appendices:
+##    - chapters/related_resources.qmd
+##    - chapters/contributors_acknowledgments.qmd
+##    - chapters/references.qmd
 
 bibliography: references.bib
 
